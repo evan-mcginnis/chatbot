@@ -1,0 +1,143 @@
+{
+  "luis_schema_version": "1.3.0",
+  "name": "chatbot",
+  "desc": "",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "showStatus"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "showEntity"
+    }
+  ],
+  "entities": [
+    {
+      "name": "managedObject"
+    }
+  ],
+  "composites": [],
+  "bing_entities": [],
+  "actions": [],
+  "model_features": [],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "show me current alarms",
+      "intent": "showEntity",
+      "entities": []
+    },
+    {
+      "text": "are there any new alarms",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "show me all gigamon devices",
+      "intent": "showEntity",
+      "entities": []
+    },
+    {
+      "text": "show the current alarms",
+      "intent": "showEntity",
+      "entities": [
+        {
+          "entity": "managedObject",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "show device state",
+      "intent": "showEntity",
+      "entities": [
+        {
+          "entity": "managedObject",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "show devices",
+      "intent": "showEntity",
+      "entities": [
+        {
+          "entity": "managedObject",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "show current alarms",
+      "intent": "showEntity",
+      "entities": [
+        {
+          "entity": "managedObject",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "list all alarms",
+      "intent": "showEntity",
+      "entities": [
+        {
+          "entity": "managedObject",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "reboot all devices",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "managedObject",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "show nodes",
+      "intent": "showEntity",
+      "entities": [
+        {
+          "entity": "managedObject",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "is the network ok?",
+      "intent": "showStatus",
+      "entities": [
+        {
+          "entity": "managedObject",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "how is the network doing?",
+      "intent": "showStatus",
+      "entities": [
+        {
+          "entity": "managedObject",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    }
+  ]
+}
