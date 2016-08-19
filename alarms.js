@@ -49,13 +49,41 @@ dialog.matches('showStatus', [
 	    var currentState = "Unknown";
 	    switch (managedObject.entity) {
 		case 'network' :
-		    currentState = "The network is just fine";
+		    currentState = "There are 3 critical alarms outstanding.";
 		    break;
 		case 'devices' :
-		    currentState = "The devices are just fine";
+		    currentState = "All devices are reachable and responding normally.";
 		    break;
 		default :
 		    currentState = "I don't know how to check on " + managedObject.entity;
+		    break;
+	    }
+	    next({ response: currentState });
+	}
+	else {
+	    next({ response: "Sorry, I can't find the managedEntity"});
+	}
+    },
+    function (session, results) {
+	if (results.response) {
+	    session.send( results.response );
+	} else {
+	    session.send("OK");
+	}
+    }
+]);
+
+dialog.matches('play', [
+    function (session, args, next) {
+	var managedObject = builder.EntityRecognizer.findEntity(args.entities, 'managedObject');
+	if(managedObject) {
+	    var currentState = "Unknown";
+	    switch (managedObject.entity) {
+		case 'game' :
+		    currentState = "How about a nice game of tic-tac-toe?";
+		    break;
+		default :
+		    currentState = "I don't know how to play " + managedObject.entity;
 		    break;
 	    }
 	    next({ response: currentState });
